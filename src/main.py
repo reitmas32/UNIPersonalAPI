@@ -23,17 +23,24 @@ def main():
 
     CONFIG.DELTA_ZONE = -1
 
-    list_jobs.append(
-        Job(name='Happy BirthDay', task=hola_message, task_times=generate_cron_task_times(15)))
-    """
+    
     list_jobs.append(
 
         Job(name='Load Personal', task=load_personal, task_times=[
-            TaskTime(hour=16, minute=59),
+            TaskTime(hour=7, minute=30),
+            TaskTime(hour=8, minute=50),
             ]
         )
     )
-    """
+    list_jobs.append(
+
+        Job(name='Load Personal', task=felicitar_cumple, task_times=[
+            TaskTime(hour=8, minute=0),
+            TaskTime(hour=9, minute=0),
+            ]
+        )
+    )
+    
     while True:
         for job in list_jobs:
             job.run_job()

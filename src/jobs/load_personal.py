@@ -48,4 +48,4 @@ def load_personal():
 
     CONFIG.PERSONAL_LIST = filtered_list
 
-    print(len(CONFIG.PERSONAL_LIST))
+    CONFIG.bot.send_message(CONFIG.GROUP_ID, f'Se cargo el personal hay : {len(CONFIG.PERSONAL_LIST)}, personas activas en Sala 2')
