@@ -13,22 +13,23 @@ def load_personal():
 
     for value in values[1:]:
 
-        personal = Personal(
-            nombre=value[CONFIG.NOMBRE],
-            apellidos=value[CONFIG.APELLIDOS],
-            nombre_corto=value[CONFIG.NOMBRE_CORTO], 
-            fecha_de_nacimiento=value[CONFIG.FECHA_DE_NACIMIENTO], 
-            numero_de_cuenta=value[CONFIG.NUMERO_DE_CUENTA], 
-            correo=value[CONFIG.CORREO], 
-            telefono=value[CONFIG.TELEFONO], 
-            carrera=value[CONFIG.CARRERA], 
-            rfc=value[CONFIG.RFC], 
-            curp=value[CONFIG.CURP], 
-            estatus=value[CONFIG.ESTATUS], 
-            modalidad=value[CONFIG.MODALIDAD],
-            update=value[CONFIG.UPDATE]
-        )
-        CONFIG.PERSONAL_LIST.append(personal)
+        if(len(value) >= 13):
+            personal = Personal(
+                nombre=value[CONFIG.NOMBRE],
+                apellidos=value[CONFIG.APELLIDOS],
+                nombre_corto=value[CONFIG.NOMBRE_CORTO], 
+                fecha_de_nacimiento=value[CONFIG.FECHA_DE_NACIMIENTO], 
+                numero_de_cuenta=value[CONFIG.NUMERO_DE_CUENTA], 
+                correo=value[CONFIG.CORREO], 
+                telefono=value[CONFIG.TELEFONO], 
+                carrera=value[CONFIG.CARRERA], 
+                rfc=value[CONFIG.RFC], 
+                curp=value[CONFIG.CURP], 
+                estatus=value[CONFIG.ESTATUS], 
+                modalidad=value[CONFIG.MODALIDAD],
+                update=value[CONFIG.UPDATE]
+            )
+            CONFIG.PERSONAL_LIST.append(personal)
 
     personal_dict = {}
     for personal in CONFIG.PERSONAL_LIST:
