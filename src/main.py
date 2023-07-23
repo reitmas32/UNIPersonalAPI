@@ -29,6 +29,8 @@ def main():
         Job(name='Load Personal', task=load_personal, task_times=[
             TaskTime(hour=7, minute=30),
             TaskTime(hour=8, minute=50),
+            TaskTime(hour=10, minute=0),
+            TaskTime(hour=9, minute=45),
             ]
         )
     )
